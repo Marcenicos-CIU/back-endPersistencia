@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "ec402495-32a1-452f-863f-92faa3005628",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44726722",
+		"_collection_link": "https://gold-equinox-856046.postman.co/workspace/Nicol%C3%A1s-Montes-de-Oca's-Workspa~0b33b03f-4675-46be-8258-b3373aef558a/collection/44726722-ec402495-32a1-452f-863f-92faa3005628?action=share&source=collection_link&creator=44726722"
+	},
+	"item": [
+		{
+			"name": "Crear un Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"alonso@example.com\",\r\n    \"password\": \"segura123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un usuario por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/user/68549e5ab22b45bf124cbac4",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"68549e5ab22b45bf124cbac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un usuario por Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/user/68549e5ab22b45bf124cbac4",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"68549e5ab22b45bf124cbac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un usuario existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Juan 6300\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/user/68549e5ab22b45bf124cbac4",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"68549e5ab22b45bf124cbac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seguir a un usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"targetId\": \"68545d44c16c675b39d2b21d\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/user/68545b3e8a57423873393cce/follow",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"68545b3e8a57423873393cce",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dejar de seguir a un usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"targetId\": \"68545d44c16c675b39d2b21d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/user/68545b3e8a57423873393cce/unfollow",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						"68545b3e8a57423873393cce",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

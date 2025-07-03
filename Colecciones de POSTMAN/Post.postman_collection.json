@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "3c36ecf6-65c0-4044-852a-3809ace12265",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44726722",
+		"_collection_link": "https://gold-equinox-856046.postman.co/workspace/Nicol%C3%A1s-Montes-de-Oca's-Workspa~0b33b03f-4675-46be-8258-b3373aef558a/collection/44726722-3c36ecf6-65c0-4044-852a-3809ace12265?action=share&source=collection_link&creator=44726722"
+	},
+	"item": [
+		{
+			"name": "Crear un post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Mi primer post\",\r\n    \"user\": \"68549e5ab22b45bf124cbac4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un post con Imagenes asociadas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/C:/Users/nicom/OneDrive/Imágenes/Wallpapers/375578.jpg"
+						},
+						{
+							"key": "user",
+							"value": "68549e5ab22b45bf124cbac4",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Primer post con IMAGEN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3003/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un post por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"description": "post con imagen",
+							"type": "file",
+							"src": "/C:/Users/nicom/OneDrive/Imágenes/Wallpapers/1899323.jpg",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3003/post/6854a074b22b45bf124cbad3",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post",
+						"6854a074b22b45bf124cbad3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un post por Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"Alonso\",\r\n    \"email\": \"juan@example.com\",\r\n    \"password\": \"segura123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/post/6854a074b22b45bf124cbad3",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post",
+						"6854a074b22b45bf124cbad3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un post existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"no\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/post/6854a074b22b45bf124cbad3",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"post",
+						"6854a074b22b45bf124cbad3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

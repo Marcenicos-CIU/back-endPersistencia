@@ -1,0 +1,510 @@
+openapi: 3.0.0
+info:
+  title: API Prototipo Red Social
+  description: Documentación actualizada de la API REST para la gestión de usuarios, etiquetas, publicaciones, comentarios e imágenes.
+  version: 2.0.0
+servers:
+  - url: http://localhost:3003
+    description: Servidor local
+  - url: https://app.swaggerhub.com/templates-docs/dyjdfyjrtyj/ApiNoRelacionalBack/2.0.0
+    description: Documentación de la API
+
+paths:
+  /user:
+    post:
+      tags: [Users]
+      summary: Crear un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Usuario creado
+    get:
+      tags: [Users]
+      summary: Obtener todos los usuarios
+      responses:
+        '200':
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+  /user/{id}:
+    get:
+      tags: [Users]
+      summary: Obtener un usuario por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      tags: [Users]
+      summary: Actualizar usuario
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Usuario actualizado
+    delete:
+      tags: [Users]
+      summary: Eliminar usuario
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Usuario eliminado
+
+  /user/{id}/follow:
+    put:
+      tags: [Users]
+      summary: Seguir a un usuario
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetUserId:
+                  type: string
+      responses:
+        '200':
+          description: Usuario seguido correctamente
+
+  /user/{id}/unfollow:
+    put:
+      tags: [Users]
+      summary: Dejar de seguir a un usuario
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetUserId:
+                  type: string
+      responses:
+        '200':
+          description: Usuario dejado de seguir
+
+  /post:
+    post:
+      tags: [Posts]
+      summary: Crear un post (con imágenes)
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                user:
+                  type: string
+                images:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '201':
+          description: Post creado
+    get:
+      tags: [Posts]
+      summary: Obtener todos los posts
+      responses:
+        '200':
+          description: Lista de posts
+
+  /post/{id}:
+    get:
+      tags: [Posts]
+      summary: Obtener post por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Post encontrado
+    put:
+      tags: [Posts]
+      summary: Actualizar post por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '200':
+          description: Post actualizado
+    delete:
+      tags: [Posts]
+      summary: Eliminar post
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Post eliminado
+
+  /comment:
+    post:
+      tags: [Comments]
+      summary: Crear nuevo comentario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          description: Comentario creado
+    get:
+      tags: [Comments]
+      summary: Obtener todos los comentarios
+      responses:
+        '200':
+          description: Lista de comentarios
+
+  /comment/{id}:
+    get:
+      tags: [Comments]
+      summary: Obtener comentario por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Comentario encontrado
+    put:
+      tags: [Comments]
+      summary: Actualizar comentario
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '200':
+          description: Comentario actualizado
+    delete:
+      tags: [Comments]
+      summary: Eliminar comentario
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Comentario eliminado
+
+  /tag:
+    post:
+      tags: [Tags]
+      summary: Crear nueva etiqueta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '201':
+          description: Etiqueta creada
+    get:
+      tags: [Tags]
+      summary: Obtener todas las etiquetas
+      responses:
+        '200':
+          description: Lista de etiquetas
+
+  /tag/{id}:
+    get:
+      tags: [Tags]
+      summary: Obtener etiqueta por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Etiqueta encontrada
+    put:
+      tags: [Tags]
+      summary: Actualizar etiqueta por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+      responses:
+        '200':
+          description: Etiqueta actualizada
+    delete:
+      tags: [Tags]
+      summary: Eliminar etiqueta
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Etiqueta eliminada
+
+  /tag/{id}/assign:
+    put:
+      tags: [Tags]
+      summary: Asignar un tag a un post
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+      responses:
+        '200':
+          description: Tag asignado al post
+
+  /tag/{id}/remove:
+    put:
+      tags: [Tags]
+      summary: Quitar un tag de un post
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+      responses:
+        '200':
+          description: Tag removido del post
+
+  /postImage:
+    post:
+      tags: [PostImages]
+      summary: Crear imagen para post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostImage'
+      responses:
+        '201':
+          description: Imagen creada
+    get:
+      tags: [PostImages]
+      summary: Obtener todas las imágenes
+      responses:
+        '200':
+          description: Lista de imágenes
+
+  /postImage/{id}:
+    get:
+      tags: [PostImages]
+      summary: Obtener imagen por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Imagen encontrada
+    put:
+      tags: [PostImages]
+      summary: Actualizar imagen
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostImage'
+      responses:
+        '200':
+          description: Imagen actualizada
+    delete:
+      tags: [PostImages]
+      summary: Eliminar imagen
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Imagen eliminada
+
+  /postImage/upload/{postId}:
+    post:
+      tags: [PostImages]
+      summary: Subir imagen a post (form-data)
+      parameters:
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Imagen subida
+
+components:
+  schemas:
+    User:
+      type: object
+      required: [nickname, email, password]
+      properties:
+        nickname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    Post:
+      type: object
+      required: [description, user]
+      properties:
+        description:
+          type: string
+        user:
+          type: string
+    Tag:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+    Comment:
+      type: object
+      required: [content, post]
+      properties:
+        content:
+          type: string
+        post:
+          type: string
+    PostImage:
+      type: object
+      required: [url, post]
+      properties:
+        url:
+          type: string
+        post:
+          type: string

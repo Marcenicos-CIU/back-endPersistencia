@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "05cf12b9-f506-4ac7-8110-94d08b835d74",
+		"name": "Comment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44726722",
+		"_collection_link": "https://gold-equinox-856046.postman.co/workspace/Nicol%C3%A1s-Montes-de-Oca's-Workspa~0b33b03f-4675-46be-8258-b3373aef558a/collection/44726722-05cf12b9-f506-4ac7-8110-94d08b835d74?action=share&source=collection_link&creator=44726722"
+	},
+	"item": [
+		{
+			"name": "Crear un comentario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"Comentario 1\",\r\n  \"post\":\"6854a074b22b45bf124cbad3\",\r\n  \"user\": \"68549e5ab22b45bf124cbac4\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/comment",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los comentarios existentes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"Este es un comentario de prueba\",\r\n  \"postId\": 1,\r\n  \"userId\": 3\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:3003/comment",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un comentario por su Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"Este es un comentario de prueba\",\r\n  \"postId\": 1,\r\n  \"userId\": 3\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:3003/comment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un comentario por su Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"Este es un comentario de prueba\",\r\n  \"postId\": 1,\r\n  \"userId\": 3\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:3003/comment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un comentario existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"Prueba de modificacion\",\r\n  \"postId\": 1,\r\n  \"userId\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/comment/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"comment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

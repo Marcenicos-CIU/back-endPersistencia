@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "a655acd2-9c5f-497a-a24d-2cd3acab64de",
+		"name": "PostImage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44726722",
+		"_collection_link": "https://gold-equinox-856046.postman.co/workspace/Nicol%C3%A1s-Montes-de-Oca's-Workspa~0b33b03f-4675-46be-8258-b3373aef558a/collection/44726722-a655acd2-9c5f-497a-a24d-2cd3acab64de?action=share&source=collection_link&creator=44726722"
+	},
+	"item": [
+		{
+			"name": "Crear una imagen Asociada a un Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg\",\r\n    \"post\": \"68548c8ad67626710fcb1139\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/postImage",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"postImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las postImage asociadas a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg\",\r\n    \"postId\": 1\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/postImage",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"postImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un postImage por su Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3003/postImage/6854a586b22b45bf124cbad7",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"postImage",
+						"6854a586b22b45bf124cbad7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un postImage por su Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3003/postImage/6854a586b22b45bf124cbad7",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"postImage",
+						"6854a586b22b45bf124cbad7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un postImage existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg\",\r\n    \"postId\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/postImage/6854a586b22b45bf124cbad7",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"postImage",
+						"6854a586b22b45bf124cbad7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

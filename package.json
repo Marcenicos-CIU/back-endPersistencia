@@ -1,0 +1,35 @@
+{
+  "name": "anti-social",
+  "version": "1.0.0",
+  "description": "UnaHur anti-social net - Trabajo Práctico",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/main"
+  },
+  "author": "Gerardo Gonzalez Tulian",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EP-UnaHur-2025C1/anti-social-relational-marcenicos.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EP-UnaHur-2025C1/anti-social-relational-marcenicos/issues"
+  },
+  "homepage": "https://github.com/EP-UnaHur-2025C1/anti-social-relational-marcenicos#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^7.0.0",
+    "multer": "^1.4.5-lts.2",
+    "node-cache": "^5.1.2",
+    "saslprep": "^1.0.3"
+  }
+}

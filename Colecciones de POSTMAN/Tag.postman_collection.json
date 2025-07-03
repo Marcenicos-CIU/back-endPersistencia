@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "50d56743-a748-42f9-9e5b-693684b0d74a",
+		"name": "Tag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44726722",
+		"_collection_link": "https://gold-equinox-856046.postman.co/workspace/Nicol%C3%A1s-Montes-de-Oca's-Workspa~0b33b03f-4675-46be-8258-b3373aef558a/collection/44726722-50d56743-a748-42f9-9e5b-693684b0d74a?action=share&source=collection_link&creator=44726722"
+	},
+	"item": [
+		{
+			"name": "Crear un tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Antony\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/tag",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los tags existentes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Antony\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/tag",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un tag por su id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Antony\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/tag/68549fb3b22b45bf124cbace",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag",
+						"68549fb3b22b45bf124cbace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un tag por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Antony\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3003/tag/68549fb3b22b45bf124cbace",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag",
+						"68549fb3b22b45bf124cbace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar un tag existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Antony1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/tag/68549fb3b22b45bf124cbace",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag",
+						"68549fb3b22b45bf124cbace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar tag a un post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"postId\": \"664f960e953fa41d6fcf23b1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/tag/68549fb3b22b45bf124cbace/assign",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag",
+						"68549fb3b22b45bf124cbace",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover tag de un post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": \"68545d30c16c675b39d2b216\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/tag/68549fb3b22b45bf124cbace/remove",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tag",
+						"68549fb3b22b45bf124cbace",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
